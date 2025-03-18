@@ -11,7 +11,10 @@ import { Dashboard } from "./routes/dashboard";
 import { CreateEditPage } from "./routes/create-edit-page";
 import { MockLoadPage } from "./routes/mock-load-page";
 import { MockInterviewPage } from "./routes/mock-interview-page";
+import Contact from "./routes/contact";
+import About from "./routes/about";
 import { Feedback } from "./routes/feedback";
+import Services from "./routes/services";
 
 const App = () => {
   return (
@@ -20,6 +23,9 @@ const App = () => {
         {/* public routes */}
         <Route element={<PublicLayout />}>
           <Route index element={<HomePage />} />
+          <Route element={<About />} path="/about" />
+          <Route element={<Contact />} path="/contact" />
+          <Route element={<Services />} path="/services" />
         </Route>
 
         {/* authentication layout */}

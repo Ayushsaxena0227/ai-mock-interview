@@ -77,36 +77,24 @@ export const Footer = () => {
                 Interview Preparation
               </FooterLink>
               <FooterLink to="/services/career-coaching">
-                Career Coaching
+                Ai-powered-Feedbacks
               </FooterLink>
-              <FooterLink to="/services/resume-building">
-                Resume Building
-              </FooterLink>
+              <FooterLink to="/services/resume-building">Live Mocks</FooterLink>
             </ul>
           </div>
 
           {/* Fourth Column: Address and Social Media */}
           <div>
             <h3 className="font-bold text-lg mb-4">Contact Us</h3>
-            <p className="mb-4">123 AI Street, Tech City, 12345</p>
+            <p className="mb-4">Greater Noida, India</p>
             <div className="flex gap-4">
-              <SocialLink
-                href="https://facebook.com"
-                icon={<Facebook size={24} />}
-                hoverColor="text-blue-500"
-              />
               <SocialLink
                 href="https://twitter.com"
                 icon={<Twitter size={24} />}
                 hoverColor="text-blue-400"
               />
               <SocialLink
-                href="https://instagram.com"
-                icon={<Instagram size={24} />}
-                hoverColor="text-pink-500"
-              />
-              <SocialLink
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/ayush-saxena-b71143220/"
                 icon={<Linkedin size={24} />}
                 hoverColor="text-blue-700"
               />
