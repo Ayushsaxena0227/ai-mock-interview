@@ -58,7 +58,11 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "@clerk/shared",
+      "@firebase/util",
       "esbuild"
+    ],
+    "ignoredBuiltDependencies": [
+      "protobufjs"
     ]
   }
 }
