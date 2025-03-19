@@ -58,7 +58,7 @@ export const MockInterviewPage = () => {
     <div className="flex flex-col w-full gap-8 py-5">
       <CustomBreadCrumb
         // @ts-ignore
-        breadCrumbPage="Start"
+        customPageTitle="Start"
         // @ts-ignore
         breadCrumpItems={[
           { label: "Mock Interviews", link: "/generate" },

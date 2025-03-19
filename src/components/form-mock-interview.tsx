@@ -32,6 +32,7 @@ import {
 } from "firebase/firestore";
 import { db } from "@/config/firebase.config";
 import { Breadcrumb } from "./ui/breadcrumb";
+import CustomBreadCrumb from "./custom-bread-crumb";
 
 interface FormMockInterviewProps {
   initialData: Interview | null;
@@ -175,9 +176,9 @@ export const FormMockInterview = ({ initialData }: FormMockInterviewProps) => {
 
   return (
     <div className="w-full flex-col space-y-4">
-      <Breadcrumb
-        breadcrumbpage={breadCrumpPage}
-        breadcrumpitems={[{ label: "Mock Interviews", link: "/generate" }]}
+      <CustomBreadCrumb
+        customPageTitle="start"
+        breadCrumpItems={[{ label: "Mock Interviews", link: "/generate" }]}
       />
 
       <div className="mt-4 flex items-center justify-between w-full">

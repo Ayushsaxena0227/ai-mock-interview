@@ -1,7 +1,6 @@
 import { Interview } from "@/types";
-import { useAuth } from "@clerk/clerk-react";
-import { useState } from "react";
-import { replace, useNavigate } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 import { Card, CardDescription, CardFooter, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { cn } from "@/lib/utils";
