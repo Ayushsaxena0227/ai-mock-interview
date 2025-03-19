@@ -17,7 +17,7 @@ export const QuestionSection = ({ questions }: QuestionSectionProps) => {
     if (isPlaying && currentSpeech) {
       window.speechSynthesis.cancel();
       setIsplaying(false);
-      setCurrentSpeech(false);
+      setCurrentSpeech(null);
     } else {
       if ("speechSynthesis" in window) {
         const speech = new SpeechSynthesisUtterance(question);

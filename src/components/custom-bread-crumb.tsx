@@ -10,11 +10,11 @@ import { Home } from "lucide-react";
 import React from "react";
 
 interface CustomBreadCrumbProps {
-  breadCrumbPage: string;
+  customPageTitle: string;
   breadCrumpItems?: { link: string; label: string }[];
 }
 const CustomBreadCrumb = ({
-  breadCrumbPage,
+  customPageTitle,
   breadCrumpItems,
 }: CustomBreadCrumbProps) => {
   return (
@@ -46,7 +46,7 @@ const CustomBreadCrumb = ({
           ))}
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbPage>{breadCrumbPage}</BreadcrumbPage>
+          <BreadcrumbPage>{customPageTitle}</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>

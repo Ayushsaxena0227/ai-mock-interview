@@ -1,11 +1,12 @@
-import { db } from "@/config/firebase.config";
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Interview } from "@/types";
-import { doc, getDoc } from "firebase/firestore";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { LoaderPage } from "./Loader-page";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "@/config/firebase.config";
 import CustomBreadCrumb from "@/components/custom-bread-crumb";
+
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Lightbulb } from "lucide-react";
 import { QuestionSection } from "@/components/question-section";
@@ -13,9 +14,13 @@ import { QuestionSection } from "@/components/question-section";
 export const MockInterviewPage = () => {
   const { interviewId } = useParams<{ interviewId: string }>();
   const [interview, setInterview] = useState<Interview | null>(null);
-  const [isloading, setisLoading] = useState(false);
+
+  const [isLoading, setIsLoading] = useState(false);
+
   const navigate = useNavigate();
+
   useEffect(() => {
+    setIsLoading(true);
     const fetchInterview = async () => {
       if (interviewId) {
         try {
@@ -28,6 +33,8 @@ export const MockInterviewPage = () => {
           }
         } catch (error) {
           console.log(error);
+        } finally {
+          setIsLoading(false);
         }
       }
     };
@@ -35,16 +42,24 @@ export const MockInterviewPage = () => {
     fetchInterview();
   }, [interviewId, navigate]);
 
-  if (isloading) {
+  if (isLoading) {
     return <LoaderPage className="w-full h-[70vh]" />;
   }
+
   if (!interviewId) {
     navigate("/generate", { replace: true });
   }
+
+  if (!interview) {
+    navigate("/generate", { replace: true });
+  }
+
   return (
     <div className="flex flex-col w-full gap-8 py-5">
       <CustomBreadCrumb
+        // @ts-ignore
         breadCrumbPage="Start"
+        // @ts-ignore
         breadCrumpItems={[
           { label: "Mock Interviews", link: "/generate" },
           {
@@ -53,7 +68,8 @@ export const MockInterviewPage = () => {
           },
         ]}
       />
-      <div className="w-full ">
+
+      <div className="w-full">
         <Alert className="bg-sky-100 border border-sky-200 p-4 rounded-lg flex items-start gap-3">
           <Lightbulb className="h-5 w-5 text-sky-600" />
           <div>
@@ -74,8 +90,8 @@ export const MockInterviewPage = () => {
         </Alert>
       </div>
 
-      {interview?.questions && interview.questions.length > 0 && (
-        <div className="mt-4 w-full flex flex-col items-start gap-4 ">
+      {interview?.questions && interview?.questions.length > 0 && (
+        <div className="mt-4 w-full flex flex-col items-start gap-4">
           <QuestionSection questions={interview?.questions} />
         </div>
       )}

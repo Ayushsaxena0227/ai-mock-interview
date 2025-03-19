@@ -109,7 +109,7 @@ export const Feedback = () => {
     <div className="flex flex-col w-full gap-8 py-5">
       <div className="flex items-center justify-between w-full gap-2">
         <CustomBreadCrumb
-          breadCrumbPage={"Feedback"}
+          customPageTitle={"Feedback"}
           breadCrumpItems={[
             { label: "Mock Interviews", link: "/generate" },
             {

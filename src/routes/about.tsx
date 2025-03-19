@@ -1,6 +1,4 @@
 import { Container } from "@/components/container";
-import { Button } from "@/components/ui/button";
-import { Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const About = () => {

@@ -7,12 +7,11 @@ import {
   Save,
   Video,
   VideoOff,
-  Webcam,
   WebcamIcon,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import useSpeechToText, { ResultType } from "react-hook-speech-to-text";
-import { useFetcher, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import WebCam from "react-webcam";
 import { TooltipButton } from "./tooltip-button";
 import { toast } from "sonner";
@@ -27,7 +26,6 @@ import {
   where,
 } from "firebase/firestore";
 import { db } from "@/config/firebase.config";
-import { P } from "node_modules/@clerk/clerk-react/dist/useAuth-D8LsVKFe.d.mts";
 
 interface RecordAnswerProps {
   question: { question: string; answer: string };

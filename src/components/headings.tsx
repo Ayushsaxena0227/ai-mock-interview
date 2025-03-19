@@ -4,13 +4,11 @@ interface HeadingsProps {
   title: string;
   description?: string;
   isSubHeading?: boolean;
-  className?: string;
 }
 
 export const Headings = ({
   title,
   description,
-  className,
   isSubHeading = false,
 }: HeadingsProps) => {
   return (
