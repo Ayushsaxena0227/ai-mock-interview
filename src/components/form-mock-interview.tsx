@@ -31,7 +31,6 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { db } from "@/config/firebase.config";
-import { Breadcrumb } from "./ui/breadcrumb";
 import CustomBreadCrumb from "./custom-bread-crumb";
 
 interface FormMockInterviewProps {
@@ -67,7 +66,7 @@ export const FormMockInterview = ({ initialData }: FormMockInterviewProps) => {
     ? initialData.position
     : "Create a new mock interview";
 
-  const breadCrumpPage = initialData ? initialData?.position : "Create";
+  // const breadCrumpPage = initialData ? initialData?.position : "Create";
   const actions = initialData ? "Save Changes" : "Create";
   const toastMessage = initialData
     ? { title: "Updated..!", description: "Changes saved successfully..." }
