@@ -3,8 +3,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 
 import { Interview } from "@/types";
-
-// import { CustomBreadCrumb } from "./custom-bread-crumb";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@clerk/clerk-react";
@@ -66,7 +64,6 @@ export const FormMockInterview = ({ initialData }: FormMockInterviewProps) => {
     ? initialData.position
     : "Create a new mock interview";
 
-  // const breadCrumpPage = initialData ? initialData?.position : "Create";
   const actions = initialData ? "Save Changes" : "Create";
   const toastMessage = initialData
     ? { title: "Updated..!", description: "Changes saved successfully..." }
