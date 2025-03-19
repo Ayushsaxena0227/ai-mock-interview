@@ -57,6 +57,7 @@ export const Dashboard = () => {
         <Headings
           title="Dashboard"
           description="Create and start you AI Mock interview"
+          className="text-black dark:text-white"
         />
         <Link to={"/generate/create"}>
           <Button size={"sm"}>

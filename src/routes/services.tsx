@@ -5,7 +5,7 @@ import { Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Services = () => {
-  const userId = useAuth();
+  const { userId } = useAuth();
   //   console.log(userId);
   return (
     <div className="flex-col w-full pb-24">
